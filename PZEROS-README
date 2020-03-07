@@ -1,0 +1,51 @@
+!
+!   Copyright 1974-2020 George Delic, HiPERISM Consulting LLC
+!
+!   This program is free software: you can redistribute it and/or modify
+!   it under the terms of the GNU General Public License as published by
+!   the Free Software Foundation, either version 3 of the License, or
+!   any later version.
+!
+!   This program is distributed in the hope that it will be useful,
+!   but WITHOUT ANY WARRANTY; without even the implied warranty of
+!   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+!   See the GNU General Public License for more details.
+!      https://www.gnu.org/licenses/gpl-3.0.en.html
+!      https://www.gnu.org/licenses/gpl-3.0.txt
+!   A copy is included in this distribution
+!
+! PURPOSE: compute the Legendre Polynomial zeros for a default
+!          range of orders from 1 to 150
+!          where the lower and upper bounds are selectable in the code
+!          These zeros are bounded by an inequality using the zeros of
+!          the spherical Bessel function of order zero as input data
+!
+! AUTHOR:  George Delic, Ph.D., this is source code for computations in
+!          G. Delic,
+!          The legendre series and a quadrature formula for its coefficients,
+!          Journal of Computational Physics, vol. 14 (1974), pp. 254-268.
+!
+! ORIGIN:  Source code developed by AUTHOR
+!
+! LANGUAGE:  FOTRAN IV and Fortran 77 (ANSI X3J3) X3.9-1978
+!
+! This code was developed on the Telefunken TR-440 with Fortran IV in 1973
+! which provided a word length with some 24 decimals in double precision:
+!     IMPLICIT REAL*8(A-H,O-Z)
+! However, current commodity processors need to be forced to use quadruple
+! precision using IMPLICIT REAL*16(A-H,O-Z) and constants defined as:
+!     1.0Q+00, etc.
+! In addition the compiler must be forced to avoid optimizations that
+! would truncate precision. In the current example, the Intel compiler is
+! invoked with:
+!
+! -mieee-fp -init=arrays,zero -double-size 128 -real-size 128 -integer-size 32
+!
+! to compile on a Linux Operating System:
+!            make > make.log 2>&1
+! to run on a Linux Operating System:
+!            ./run
+! verify output by comparison with:
+!             fort.7.backup
+!             j0-150.out.backup
+!
