@@ -2,5 +2,5 @@ See the README for details and note the GNU Public License
 Download all files
 You may need to run them through dos2unix on a Linux machine
 
-Apolgies for the separate files but Github won't let upload of *.gz files
-Remember this has sparse comments in the code because this dates from the era of card punched source.
+Apolgies for the separate files but Github will not allow upload of *.gz files
+Remember this has sparse comments in the code because it dates from the era of card punched FORTRAN source.
